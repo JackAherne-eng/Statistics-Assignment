@@ -14,13 +14,31 @@ attach(data)
 #       Question 1
 ############################################################
 
-boxplot(managed ~ type, names = c ( "M", "T", ""))
-tapply(managed, type, length)
+r = table(managed, type)
+colnames(r) = c("House", "Apartment", "Other")
+row.names(r) = c("Managed", "Unmanaged")
+plot(r, main="Managed/Type")
 
+#Test
+pwr.anova.test
+#ASK BIGMAN TOMORROW
 
 ############################################################
 #       Question 2
 ############################################################
+
+boxplot(rent ~ type, names = c("House", "Apartment", "Other"),
+        main = "Rent/Occupancy")
+
+# Summary Stats
+tapply(rent, type, mean, na.rm=T)
+tapply(rent, type, sd, na.rm=T)
+tapply(rent, type, length)
+
+# Test
+summary(aov(rent ~ type))
+
+summary(aov(rent ~ factor(type)))
 
 ############################################################
 #       Question 3
