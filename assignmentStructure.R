@@ -32,7 +32,7 @@ pwr.anova.test()
 ############################################################
 #Plot the data
 boxplot(rent ~ occupant, names = 
-          c("Family", "House Share","Single Occupant", "other"),
+          c("Family", "House Share","Single", "other"),
         main = "Rent/Occupancy")
 
 # Summary Stats
@@ -152,7 +152,7 @@ cor.test(rent,income)
 ############################################################
 #Plot the data
 g = table(occupant, type)
-colnames(g) = c("Family", "House Share", "Single Occupant", "Other")
+colnames(g) = c("Family", "House Share", "Single", "Other")
 row.names(g) = c("House", "Apartment", "Other")
 plot(g, main ="Occupant/Type")
 
@@ -242,7 +242,7 @@ t.test(rent ~ managed)
 ############################################################
 #Plot the data
 boxplot(rent ~ type, names = c("House", "Apartment", "Other"),
-        main = "Rent/Occupancy")
+        main = "Rent/Type")
 
 # Summary Stats
 tapply(rent, type, mean, na.rm=T)
