@@ -24,8 +24,13 @@ row.names(r) = c("Managed", "Unmanaged")
 plot(r, main="Managed/Type")
 
 #Test
-pwr.anova.test()
+chisq.test(managed, type)
 
+# Results
+# Pearson's Chi-squared test
+#
+# data:  managed and type
+# X-squared = 0.15502, df = 2, p-value = 0.9254
 
 ############################################################
 #       Question 2
